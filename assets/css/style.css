@@ -33,29 +33,69 @@ body{
     background-color: #FFBB3C;
 }
 
+.btn-hov:hover{
+    color: #D8D8D8 !important;
+    background: black !important;
+    border-color: black !important;
+}
+
+.link-hov:hover{
+    color: var(--color2) !important;
+}
+
 /* Top-Nav */
 .top-nav{
     background-color: var(--color1);
     width: 100%;
+    height: 40px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    
 }
 
+.top-nav2{
+    background-color: var(--color1);
+    width: 100%;
+}
+
+.tnav{
+    color: var(--color1);
+    background-color: #fff;
+}
+
+.tnav div div div a{
+    text-decoration-color: #D8D8D8;
+}
+
+.a-top-nav{
+    color: var(--color1);
+}
 
 
 /* Navigation */
 .navigation{
     width: 100%;
     position: fixed;
-    top: 10;
+    top: 40px;
+    left: 0;
     z-index: 50;
     transition: background-color 200ms ease-in-out;
 }
+
+@media screen and (max-width: 992px) {
+    .navigation {
+        background-color: var(--color1);
+      top: 0;
+    }
+  }
 
 .navigation a{
     color: white;
 }
 
 .scroll-navigation{
-    top: 0;
     background-color: var(--color1);
     box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
@@ -76,10 +116,16 @@ body{
 .hero{
     width: 100%;
     min-height: 100vh;
-    background-image: url('../imagenes/IMAGEN\ HERO.jpg');
-    background-size: cover;
-    background-position: center center;
     position: relative;
+    overflow: hidden;
+}
+.hero video{
+    position: absolute;
+    height: 100%;
+    width: auto;
+    top: 0;
+    left: 0;
+    z-index: -10;
 }
 
 .hero::before{
@@ -260,8 +306,29 @@ body{
     background-position: center center;
 }
 
+.atras{
+    width: 0px;
+}
 
-.card-study1::before{
+.card-study img{
+    z-index: -10;
+    width: 100%;
+    position: relative;
+    display: block;
+} 
+
+.card-study-img{
+    width: 100%;
+    position: relative;
+    display: block;
+    transition: all 200ms ease-in-out;
+}
+
+.card-study-img:hover{
+    transform: scale(1.8);
+}
+
+.card-study1 .card-study-img::before{
     content: '';
     position: absolute;
     width: 100%;
@@ -271,7 +338,7 @@ body{
     top: 0;
     left: 0;
 }
-.card-study2::before{
+.card-study2 .card-study-img::after{
     content: '';
     position: absolute;
     width: 100%;
@@ -282,11 +349,7 @@ body{
     left: 0;
 }
 
-.card-study img{
-    background-size: cover;
-    background-position: top top;
-    width: 100%;
-}
+
 
 
 .card-study div{
@@ -468,13 +531,41 @@ body{
 }
 
 .fondo-video{
-    background-image: url('../imagenes/construccion.jpg');
     min-height: 500px;
-    background-size: cover;
-    background-position: center center;
-    background-repeat: no-repeat;
     position: relative;
+    overflow: hidden;
+    background-size: cover;
 }
+
+.box-video{
+    overflow: hidden;
+    background-size: cover;
+}
+
+.fondo-video video{
+    position: absolute;
+    background-size: cover;
+    height: 100%;
+    background-position: center center;
+    width: 100%;
+    height: auto;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: -10;
+}
+@media screen and (max-width: 600px) {
+    .fondo-video video{
+        left: -40%;
+    }
+  }
+  @media screen and (max-width: 1000px) {
+    .fondo-video video{
+        height: 100%;
+        width: auto;
+    }
+  }
+  
 
 .fondo-video::before{
     content: '';
